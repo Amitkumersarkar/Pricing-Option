@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "../Link/Link";
 import { RiMenu2Line } from "react-icons/ri";
+import { IoCloseSharp } from "react-icons/io5";
 const Navbar = () => {
     // declared an state
     const [open, setOpen] = useState(false);
@@ -16,13 +17,12 @@ const Navbar = () => {
     return (
         <nav>
             {/*for react icon */}
-            <div className="md:hidden" onClick={() => setOpen(true)}>
-                {/*dynamic condition */}
+            <div className="md:hidden" onClick={() => setOpen(!open)}>
+                {/*dynamic conditional toggling */}
                 {
-                    open === true ? 'open' : 'closed'
+                    open === true ? <IoCloseSharp className="text-3xl" /> : <RiMenu2Line className="text-2xl " />
                 }
 
-                <RiMenu2Line className="text-2xl " />
             </div>
             <ul className="md:flex">
                 {
