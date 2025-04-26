@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Link from "../Link/Link";
-
+import { RiMenu2Line } from "react-icons/ri";
 const Navbar = () => {
+    // declared an state
+    const [open, setOpen] = useState(false);
     // declare routes data here
     const routes = [
         { id: 1, path: "/", name: "Home" },
@@ -12,6 +15,15 @@ const Navbar = () => {
 
     return (
         <nav>
+            {/*for react icon */}
+            <div className="md:hidden" onClick={() => setOpen(true)}>
+                {/*dynamic condition */}
+                {
+                    open === true ? 'open' : 'closed'
+                }
+
+                <RiMenu2Line className="text-2xl " />
+            </div>
             <ul className="md:flex">
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link>)
