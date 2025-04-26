@@ -1,13 +1,15 @@
 import './App.css'
-import Daisy from './components/Daisy/Daisy'
+// import Daisy from './components/Daisy/Daisy'
 import Navbar from './components/Header/Navbar'
+import PriceOptions from './components/Header/PriceOptions/PriceOptions'
 
 function App() {
 
   return (
     <>
       <Navbar></Navbar>
-      <Daisy></Daisy>
+      <PriceOptions></PriceOptions>
+      {/* <Daisy></Daisy> */}
     </>
   )
 }
